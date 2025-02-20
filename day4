@@ -1,0 +1,68 @@
+1)IR SENSOR
+  
+int ir=12;
+void setup() 
+{
+pinMode(ir, INPUT);
+ Serial.begin(9600);
+}
+void loop() 
+{
+ int v=digitalRead(ir);
+ if(v==HIGH)
+ {
+ Serial.println("object is detected");
+ }
+ else
+ Serial.println("object is not detected");
+}
+
+
+
+2)IR SENSOR WITH LED
+
+  
+  int ir=12,LED=42;
+void setup() 
+{
+pinMode(ir, INPUT);
+pinMode(LED,OUTPUT);
+ Serial.begin(9600);
+}
+void loop() 
+{
+ int v=digitalRead(ir);
+ if(v==HIGH)
+ {
+ Serial.println("object is detected");
+ digitalWrite(LED,HIGH);
+ }
+ else
+ Serial.println("object is not detected");
+}
+
+
+3)IR SENSOR WITH LED AND BUZ
+
+int ir=12,LED=42,BUZ=6;
+void setup() 
+{
+pinMode(ir, INPUT);
+pinMode(LED,OUTPUT);
+pinMode(BUZ,OUTPUT);
+ Serial.begin(9600);
+}
+void loop() 
+{
+ int v=digitalRead(ir);
+ if(v==HIGH)
+ {
+ Serial.println("object is detected");
+ digitalWrite(LED,HIGH);
+ }
+ else
+ Serial.println("object is not detected");
+  digitalWrite(BUZ,HIGH);
+}
+
+
