@@ -1,0 +1,44 @@
+1)TOUCH SENSOR
+
+
+int touch=7;
+void setup()
+ {
+pinMode(touch, INPUT);
+ Serial.begin(9600);
+}
+void loop()
+ {
+ int touchvalue=digitalRead(touch);
+ if(touchvalue==HIGH)
+ {
+ Serial.println("touch detected");
+ }
+ else
+  Serial.println("touch  not detected");
+delay(1000);
+}
+
+
+
+2)SOIL SENSOR
+  int sm=A0,buz=6;
+void setup()
+ {
+pinMode(sm, INPUT);
+pinMode(buz, OUTPUT);
+ Serial.begin(9600);
+}
+void loop() {
+  {
+int soilvalue=digitalRead(sm);
+Serial.println(soilvalue);
+if(soilvalue<500)
+{
+  digitalWrite(6,HIGH);
+}
+digitalWrite(6,LOW);
+delay(1000);
+}
+
+}
