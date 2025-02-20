@@ -1,0 +1,37 @@
+1)SOUND SENSOR
+
+
+  int ss=A0;
+void setup()
+ {
+pinMode(ss, INPUT);
+ Serial.begin(9600);
+}
+
+void loop() 
+{
+int v=analogRead(ss);
+Serial.println(v);
+delay(1000);
+}
+
+
+2)SOUND SENSOR WITH LED
+  int ss=A0;
+void setup()
+ {
+pinMode(ss, INPUT);
+ Serial.begin(9600);
+}
+
+void loop() 
+{
+int v=analogRead(ss);
+if(v>500)
+{
+  digitalWrite(42,HIGH);
+}
+digitalWrite(42,LOW);
+Serial.println(v);
+delay(1000);
+}
