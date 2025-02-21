@@ -1,0 +1,22 @@
+int relay=5,ir=7;
+void setup() 
+{
+
+pinMode(5,OUTPUT);
+ Serial.begin(9600);
+}
+void loop() 
+{
+  if(ir==HIGH)
+  {
+ digitalWrite(relay,HIGH);
+ Serial.println("motor on");
+ delay(5000);
+}
+ else
+ {
+ digitalWrite(relay,LOW);
+ Serial.println("motor off");
+ delay(10000);
+}
+}
