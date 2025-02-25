@@ -1,0 +1,21 @@
+int flame=A0;
+void setup()
+ {
+ pinMode(flame,INPUT);
+ pinMode(35,OUTPUT);
+ Serial.begin(9600);
+}
+
+void loop() {
+  int flamevalue=digitalRead(flame);
+  if(flame==HIGH)
+  {
+    Serial.println(flamevalue);
+    Serial.println("Flame is detected");
+    digitalWrite(35,HIGH);
+    delay(1000);
+  }
+  else
+  Serial.println("Flame is not detected");
+digitalWrite(35,LOW);
+}
