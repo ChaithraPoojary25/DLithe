@@ -1,0 +1,32 @@
+BLINK CODE
+#define BLYNK_TEMPLATE_ID "TMPL3XgoH-PB1"
+#define BLYNK_TEMPLATE_NAME "led2"
+#define BLYNK_AUTH_TOKEN "CI1bMZizUJ-a4b_62aBFrA1kRxHJqUVz"
+#define BLYNK_PRINT Serial
+#include<WiFi.h>
+#include<BlynkSimpleEsp32.h>
+
+char auth[] ="CI1bMZizUJ-a4b_62aBFrA1kRxHJqUVz";
+char ssid[] = "Galaxy M31EA37";
+char pass[] = "uvkv0100";
+
+BLYNK_WRITE(V0){
+  int pinvalue=param.asInt();
+  digitalWrite(42,pinvalue);
+}
+void setup() {
+ Serial.begin(9600);
+ pinMode(42,OUTPUT);
+ WiFi.begin(ssid,pass);
+ while(WiFi.status() != WL_CONNECTED){
+  delay(500);
+  Serial.println("Not connected");
+ }
+ Serial.println("Connected");
+ Blynk.begin(auth,ssid,pass);
+
+}
+
+void loop() {
+  Blynk.run();
+}
